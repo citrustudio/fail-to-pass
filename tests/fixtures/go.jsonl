@@ -1,0 +1,8 @@
+{"Action": "run", "Package": "example.test/math", "Test": "TestSum"}
+{"Action": "pass", "Package": "example.test/math", "Test": "TestSum"}
+{"Action": "run", "Package": "example.test/math", "Test": "TestBroken"}
+{"Action": "fail", "Package": "example.test/math", "Test": "TestBroken"}
+{"Action": "run", "Package": "example.test/other", "Test": "TestSum"}
+{"Action": "skip", "Package": "example.test/other", "Test": "TestSum"}
+{"Action": "fail", "Package": "example.test/math"}
+{"Action": "pass", "Package": "example.test/other"}

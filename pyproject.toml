@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools==80.9.0", "wheel==0.45.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fail-to-pass"
+version = "0.1.0"
+description = "Per-test transition classification with bounded rerun confirmation"
+requires-python = ">=3.11"
+dependencies = []
+license = "Apache-2.0"
+readme = "README.md"
+
+[project.scripts]
+fail-to-pass = "fail_to_pass.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

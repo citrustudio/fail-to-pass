@@ -1,0 +1,24 @@
+{
+  "success": false,
+  "numRuntimeErrorTestSuites": 0,
+  "testResults": [
+    {
+      "name": "sum.test.ts",
+      "status": "failed",
+      "assertionResults": [
+        {
+          "fullName": "math adds",
+          "status": "passed"
+        },
+        {
+          "fullName": "math subtracts",
+          "status": "failed"
+        },
+        {
+          "fullName": "math later",
+          "status": "skipped"
+        }
+      ]
+    }
+  ]
+}

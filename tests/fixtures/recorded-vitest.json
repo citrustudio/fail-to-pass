@@ -1,0 +1,23 @@
+{
+  "success": false,
+  "testResults": [
+    {
+      "name": "sum.test.mjs",
+      "status": "failed",
+      "assertionResults": [
+        {
+          "fullName": "math adds",
+          "status": "passed"
+        },
+        {
+          "fullName": "math subtracts",
+          "status": "failed"
+        },
+        {
+          "fullName": "math later",
+          "status": "skipped"
+        }
+      ]
+    }
+  ]
+}

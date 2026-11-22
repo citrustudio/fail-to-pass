@@ -1,0 +1,31 @@
+name: fail-to-pass
+description: Classify tests against a committed base and head
+inputs:
+  base:
+    description: Comparison ref available in the checked-out repository
+    required: true
+  repository:
+    description: Local checkout directory with complete history
+    default: '.'
+  config:
+    description: Optional config path relative to the workflow working directory
+    default: ''
+runs:
+  using: composite
+  steps:
+    - name: Install fail-to-pass from the Action release
+      shell: bash
+      run: python -m pip install --disable-pip-version-check "$GITHUB_ACTION_PATH"
+    - name: Measure transitions
+      shell: bash
+      env:
+        INPUT_BASE: ${{ inputs.base }}
+        INPUT_REPOSITORY: ${{ inputs.repository }}
+        INPUT_CONFIG: ${{ inputs.config }}
+      run: |
+        set -euo pipefail
+        args=(--repo "$INPUT_REPOSITORY" --base "$INPUT_BASE")
+        if [[ -n "$INPUT_CONFIG" ]]; then
+          args+=(--config "$INPUT_CONFIG")
+        fi
+        python -m fail_to_pass "${args[@]}"
